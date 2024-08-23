@@ -11,3 +11,4 @@
 - [x] x86: tu19/thefirst simple buffer overflow with gets to call a different function    简单题
 - [x] Csaw13/pwn/exploit1 overwrite variable on stack    简单题
 - [x] x64: Csaw18/pwn/get_it simple buffer overflow hidword on the stack  简单题
+- [ ] x64: googlequals17/pwn/wiki vsyscall, PIE, buffer overflow, no verbose output
