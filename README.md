@@ -6,3 +6,6 @@
 - [x] x86: backdoorctf/bbpwn Format String, got overwrite, system imported function
 - [ ] x86: tokyowesterns16/pwn/greeting Format String, .fini_array write to cause loop back, overwrite got address with plt system
 - [ ] x86: tu19/vulnmath/ use fmt string bug to get libc infoleak, then got overwrite
+
+# Stack
+- [x] x86: tu19/thefirst simple buffer overflow with gets to call a different function
