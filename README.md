@@ -1,6 +1,12 @@
 # pwnTillDeath
 折腾着玩~
 
+# 学习库
+- [pwn-notes](https://github.com/ir0nstone/pwn-noteshttps://github.com/ir0nstone/pwn-notes)
+- [sixStars CTF](https://github.com/sixstars)
+- [ropemporium](https://ropemporium.com/)    # focus on ROP topic
+- [readTeamNote: binary-exploitation](https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation)
+
 # fmtString
 - [x] x64: hackIM19/pwn/babypwn Format String, Signed/Unsigned bug, fmt string libc infoleak with %s, LD_PRELOAD, id remote libc file, get scanf not to write over a value  有意思的题
 - [x] x86: backdoorctf/bbpwn Format String, got overwrite, system imported function
