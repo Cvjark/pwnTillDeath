@@ -19,3 +19,4 @@
 - [x] x64: Csaw18/pwn/get_it simple buffer overflow hidword on the stack  简单题
 - [x] x64: googlequals17/pwn/wiki vsyscall, PIE, buffer overflow, no verbose output  特殊滑板，观测关键 vuln 点的逻辑
 - [ ] sixstarctf2018_babystack, stack overflow. ROP、put_plt to leak。problems: 新线程对应的 canary 偏移计算
+- [ ] TokyoWestern18_pwn_load ROP，stack overflow，fd assign。
