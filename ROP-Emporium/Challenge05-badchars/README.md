@@ -1,0 +1,2 @@
+# Intro
+You'll still need to deal with writing a string into memory, similar to the write4 challenge, that may have **badchars** in it. Once your string is in memory and intact, just use the print_file() method to print the contents of the flag file, just like in the last challenge. Think about how we're going to overcome the badchars issue; should we try to avoid them entirely, or could we use gadgets to change our string once it's in memory?
