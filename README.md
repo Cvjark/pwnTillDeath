@@ -7,6 +7,12 @@
 - [ropemporium](https://ropemporium.com/)    # focus on ROP topic
 - [readTeamNote: binary-exploitation](https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation)
 
+# ROP-Emporium
+- challenge01：ret2win (x86 & x86_64 version), simply hijack the ret address to call other function
+- challenge02: split (x86 & x86_64 version), 
+- challenge03: callme (x86 & x86_64 version), consecutive call without crash
+- challenge04: write4 (x86 & x86_64 version), ROP write memory to build the argv we want
+
 # fmtString
 - [x] x64: hackIM19/pwn/babypwn Format String, Signed/Unsigned bug, fmt string libc infoleak with %s, LD_PRELOAD, id remote libc file, get scanf not to write over a value  有意思的题
 - [x] x86: backdoorctf/bbpwn Format String, got overwrite, system imported function
