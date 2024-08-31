@@ -1,22 +1,23 @@
 # pwnTillDeath
-折腾着玩~
+All content about CTF pwn topic~ Have fun~.
 
-# 学习库
+# Related repo
 - [pwn-notes](https://github.com/ir0nstone/pwn-noteshttps://github.com/ir0nstone/pwn-notes)
 - [sixStars CTF](https://github.com/sixstars)
 - [ropemporium](https://ropemporium.com/)    # focus on ROP topic
 - [readTeamNote: binary-exploitation](https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation)
 
 # ROP-Emporium
-- challenge01：ret2win (x86 & x86_64 version), simply hijack the ret address to call other function
-- challenge02: split (x86 & x86_64 version), 
-- challenge03: callme (x86 & x86_64 version), consecutive call without crash
-- challenge04: write4 (x86 & x86_64 version), ROP write memory to build the argv we want
+- [challenge01](https://ropemporium.com/challenge/ret2win.html)：ret2win (x86 & x86_64 version), simply hijack the ret address to call other function
+- [challenge02](https://ropemporium.com/challenge/split.html): split (x86 & x86_64 version), 
+- [challenge03](https://ropemporium.com/challenge/callme.html): callme (x86 & x86_64 version), consecutive call without crash
+- [challenge04](https://ropemporium.com/challenge/callme.html): write4 (x86 & x86_64 version), ROP write memory to build the argv we want
+- [challenge05](https://ropemporium.com/challenge/badchars.html): badchars (x86 & x86_64 version)
 
-# fmtString
+# FmtString
 - [x] x64: hackIM19/pwn/babypwn Format String, Signed/Unsigned bug, fmt string libc infoleak with %s, LD_PRELOAD, id remote libc file, get scanf not to write over a value  有意思的题
 - [x] x86: backdoorctf/bbpwn Format String, got overwrite, system imported function
-- [ ] x86: tokyowesterns16/pwn/greeting Format String, .fini_array write to cause loop back, overwrite got address with plt system
+- [x] x86: tokyowesterns16/pwn/greeting Format String, .fini_array write to cause loop back, overwrite got address with plt system
 - [ ] x86: tu19/vulnmath/ use fmt string bug to get libc infoleak, then got overwrite
 
 # Stack

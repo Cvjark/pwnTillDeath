@@ -11,3 +11,4 @@ Follow the links on the homepage to see exercise descriptions and the challenge 
 | split         |             √ | √             | ×             | ×             |
 |  callme       |             √ | √             | ×             | ×             |
 | write4        |             √ | √             | ×             | ×             |
+| badchars      |             √ | √             | ×             | ×             |
