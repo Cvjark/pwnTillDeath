@@ -1,0 +1,4 @@
+break scanf
+break *0x400680
+break *0x400686
+
